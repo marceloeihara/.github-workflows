@@ -1,7 +1,7 @@
 import re
 import spacy
 
-# Transcrição obtida na Aula 01
+# Transcrição obtida na Aula 0
 transcription_whisper = "Olá, boa noite. Eu gostaria de saber os ingredientes da pizza de calabresa, por favor."
 
 # Carregar modelo de NLP do spaCy para português

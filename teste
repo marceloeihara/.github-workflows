@@ -1,0 +1,21 @@
+import re
+import spacy
+
+# Transcrição obtida na Aula 01
+transcription_whisper = "Olá, boa noite. Eu gostaria de saber os ingredientes da pizza de calabresa, por favor."
+
+# Carregar modelo de NLP do spaCy para português
+nlp = spacy.load("pt_core_news_lg")
+
+# Função de pré-processamento
+def preprocess_text(text):
+    text = text.lower().strip()  # Lowercase
+    #remove todos os caracteres que não sejam letras, números ou espaços da string text
+    text = re.sub(r"[^\w\s]", "", text)  # Remover pontuação
+    return text
+
+# Aplicar NLP
+processed_text = preprocess_text(transcription_whisper)
+doc = nlp(processed_text)
+
+print("Texto Pré-processado:", processed_text)
